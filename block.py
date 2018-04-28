@@ -45,5 +45,6 @@ class Block:
             s = self.h.hexdigest()
             if s[0] == '0' and s[1] == '0' and s[2] == '0' and s[3] == '0':
                 mining = False
+                self.h = s 
             else:
                 self.nonce = self.nonce + 1        

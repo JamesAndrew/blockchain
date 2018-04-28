@@ -30,7 +30,7 @@ class Block:
         print('Peer ' + self.miner)
         print('# ' + str(self.n) + ", nonce = " + str(self.nonce))
         print(self.data)
-        print('hash = ' + self.h.hexdigest())
+        print('hash = ' + self.h)
         print('prevhash = ' + str(self.prevh))
 
     def mine(self):

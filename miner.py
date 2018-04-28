@@ -5,6 +5,8 @@ sqs = boto3.resource('sqs')
 
 miner = input("miner name")
 
+chain = []
+
 # give miner 100 coins to start with
 coinbase = 100
 
@@ -12,7 +14,6 @@ coinbase = 100
 if (miner == 'a'):
     b = block.Block(miner, 0, "", 0)
     b.mine()
-    chain = []
     chain.append(b)
 
     # send block to everyone

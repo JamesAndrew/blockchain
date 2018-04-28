@@ -21,7 +21,7 @@ if (miner == 'a'):
 
 def checkMsgs():
     msg = sqs.get_queue_by_name(QueueName='node' + miner).receive_messages()
-    m = msg[0].split(",")
+    m = msg[0].body.split(",")
     if m[0] == 'add':
         c = block.Block(miner, 0, "", 0)
         c.otherBlock(m[1], m[2], m[3], m[4], m[5], m[6])

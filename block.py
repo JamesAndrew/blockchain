@@ -29,6 +29,24 @@ class Block:
         self.h = h
         self.prevh = prevh
 
+    def verify(self):
+        tx = self.data.split('|')
+        if tx[0] == self.miner:
+            if (self.coinbase - tx[1]) > 0:
+                self.coinbase = self.coinbase - tx[1]
+                return True
+            else:
+                return False
+        elif tx[0] != self.miner:
+            if tx[2] == self.miner:
+                self.coinbase = self.coinbase + tx[1]
+                return True
+            if tx[2] != self.miner:
+                return False
+        else:
+            print("verification error")
+            return False
+
     def display(self):
         print('Peer ' + self.miner)
         print('coinbase = ' + str(self.coinbase))

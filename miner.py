@@ -8,7 +8,7 @@ miner = input("miner name")
 chain = []
 
 def sendMsgs(m):
-    for char in 'ab':
+    for char in 'abcd':
         if char != miner:
             sqs.get_queue_by_name(QueueName='node' + char).send_message(MessageBody=m)
 

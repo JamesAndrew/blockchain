@@ -69,6 +69,7 @@ while loop:
         loop = False
     elif option == "1":
         print("create block")
+        createBlock()
     elif option == "2":
         print("displaying blockchain")
         for item in chain[:]:

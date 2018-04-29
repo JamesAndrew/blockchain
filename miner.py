@@ -29,9 +29,9 @@ def checkMsgs():
 
 def createBlock():
     first = input("your first block?")
-    if first == 'y'
+    if first == 'y':
         coins = 100
-    else
+    else:
         coins = 0
     print("New transaction") 
     f = miner

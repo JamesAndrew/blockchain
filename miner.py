@@ -46,7 +46,7 @@ def createBlock():
         newb.mine()
         chain.append(newb)
         # send block to everyone
-        sendMsgs("add," +newb.miner + ',' + str(newb.coinbase) + ',' + str(bnew.n) + ',' \
+        sendMsgs("add," +newb.miner + ',' + str(newb.coinbase) + ',' + str(newb.n) + ',' \
             + str(newb.nonce) + ',' + str(newb.data) + ',' + str(newb.h) + ',' + str(newb.prevh))
             
 # create initial block if miner a

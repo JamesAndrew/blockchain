@@ -32,14 +32,14 @@ class Block:
     def verify(self):
         tx = self.data.split('|')
         if tx[0] == self.miner:
-            if (self.coinbase - tx[1]) > 0:
-                self.coinbase = self.coinbase - tx[1]
+            if (self.coinbase - int(tx[1])) > 0:
+                self.coinbase = self.coinbase - int(tx[1])
                 return True
             else:
                 return False
         elif tx[0] != self.miner:
             if tx[2] == self.miner:
-                self.coinbase = self.coinbase + tx[1]
+                self.coinbase = self.coinbase + int(tx[1])
                 return True
             if tx[2] != self.miner:
                 return False

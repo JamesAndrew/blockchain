@@ -39,7 +39,7 @@ def createBlock():
     t = input("to?")
     tx = f + '|' + amount + '|' + t
     lblock = chain[-1]
-    num = lblock.n + 1
+    num = int(lblock.n) + 1
     ph = lblock.h
     newb = block.block(miner, coins, num, tx, ph)
     if newb.verify():

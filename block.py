@@ -31,7 +31,7 @@ class Block:
 
     def display(self):
         print('Peer ' + self.miner)
-        print('coinbase = ' + self.coinbase)
+        print('coinbase = ' + str(self.coinbase))
         print('# ' + str(self.n) + ", nonce = " + str(self.nonce))
         print(self.data)
         print('hash = ' + self.h)
@@ -43,7 +43,7 @@ class Block:
         # is block being mined
         mining = True
         while(mining):
-            hashV = self.miner + str(coinbase) + str(self.n) + str(self.nonce) + str(self.data) + str(self.prevh)
+            hashV = self.miner + str(self.coinbase) + str(self.n) + str(self.nonce) + str(self.data) + str(self.prevh)
             self.h = hashlib.sha256()
             self.h.update(hashV.encode('UTF-8'))
             s = self.h.hexdigest()

@@ -44,7 +44,7 @@ def createBlock():
     newb = block.block(miner, coins, num, tx, ph)
     if newb.verify():
         newb.mine()
-        chain.(newb)
+        chain.append(newb)
         # send block to everyone
         sendMsgs("add," +new b.miner + ',' + str(newb.coinbase) + ',' + str(bnew.n) + ',' \
             + str(newb.nonce) + ',' + str(newb.data) + ',' + str(newb.h) + ',' + str(newb.prevh))

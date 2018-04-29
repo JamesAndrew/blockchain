@@ -41,7 +41,7 @@ def createBlock():
     lblock = chain[-1]
     num = int(lblock.n) + 1
     ph = lblock.h
-    newb = block.block(miner, coins, num, tx, ph)
+    newb = block.Block(miner, coins, num, tx, ph)
     if newb.verify():
         newb.mine()
         chain.append(newb)
